@@ -1,0 +1,7 @@
+{
+  "name": "App_Rest",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
