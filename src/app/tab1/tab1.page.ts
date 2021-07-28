@@ -15,7 +15,7 @@ export class Tab1Page implements OnInit{
 
   ngOnInit(){ //se ejecuta apenas la pagina cargue
     // this.http.get<any>("https://rickandmortyapi.com/api/character")
-    this.http.get<any>("http://localhost:3000/earthquakes")
+    this.http.get<any>("http://api.jkd.cl:18088/earthquakes")
     .subscribe(res => {
       console.log(res);
       this.sismos = res;

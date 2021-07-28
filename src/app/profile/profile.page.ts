@@ -20,7 +20,7 @@ export class ProfilePage implements OnInit {
   ngOnInit() {
     // console.log(this.activateRoute.snapshot.paramMap.get('id'))
     this.idSismo = this.activateRoute.snapshot.paramMap.get("id");
-    this.http.get("http://localhost:3000/earthquakes/" + this.idSismo)
+    this.http.get("http://api.jkd.cl:18088/earthquakes/" + this.idSismo)
       .subscribe(res => {
         console.log(res);
         console.log(res[0].fecha);
