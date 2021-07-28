@@ -12,11 +12,14 @@
     <div *ngIf="caracter">
       <ion-card class="ion-text-center card">
         <ion-card-content>
-          <img src="{{caracter.image}}" alt="">
-          <ion-card-title>{{caracter.name}}</ion-card-title>
+          <img src="{{caracter.img}}" alt="">
+          <ion-card-title class="fecha">{{caracter.fecha}}</ion-card-title>
           <div class="label">
-            <ion-label>Estado: {{caracter.status}}<br></ion-label>
-            <ion-label>Especie: {{caracter.species}}<br></ion-label>
+            <ion-label>Latitud: {{caracter.latitud}}<br></ion-label>
+            <ion-label>Longitud: {{caracter.longitud}}<br></ion-label>
+            <ion-label>Profundidad: {{caracter.profundidad}} Km<br></ion-label>
+            <ion-label>Magnitud: {{caracter.magnitud}} MI<br></ion-label>
+            <ion-label>Referencia: {{caracter.referencia}}<br></ion-label>
           </div>
         </ion-card-content>
       </ion-card>

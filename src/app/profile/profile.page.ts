@@ -20,10 +20,11 @@ export class ProfilePage implements OnInit {
   ngOnInit() {
     // console.log(this.activateRoute.snapshot.paramMap.get('id'))
     this.idSismo = this.activateRoute.snapshot.paramMap.get("id");
-    this.http.get("https://rickandmortyapi.com/api/character/" + this.idSismo)
+    this.http.get("http://localhost:3000/earthquakes/" + this.idSismo)
       .subscribe(res => {
         console.log(res);
-        this.caracter = res;
+        console.log(res[0].fecha);
+        this.caracter = res[0];
       })
   }
 

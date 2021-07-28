@@ -6,10 +6,10 @@
 
 <ion-content [fullscreen]="true">
   <ion-list>
-    <ion-item *ngFor="let character of characters" [routerLink]="['/profile/' + character.id]">
+    <ion-item *ngFor="let s of sismos" [routerLink]="['/profile/' + s.id]">
       <ion-icon name="calendar"></ion-icon>
 
-      <ion-label>{{character.name}}</ion-label>
+      <ion-label>{{s.fecha}}</ion-label>
     </ion-item>
   </ion-list>
 </ion-content>

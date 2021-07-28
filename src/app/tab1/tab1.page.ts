@@ -9,15 +9,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class Tab1Page implements OnInit{
 
-  characters = [];
+  sismos = [];
 
   constructor(private http: HttpClient) {  }
 
   ngOnInit(){ //se ejecuta apenas la pagina cargue
-    this.http.get<any>("https://rickandmortyapi.com/api/character")
+    // this.http.get<any>("https://rickandmortyapi.com/api/character")
+    this.http.get<any>("http://localhost:3000/earthquakes")
     .subscribe(res => {
       console.log(res);
-      this.characters = res.results;
+      this.sismos = res;
     })
   }
 
