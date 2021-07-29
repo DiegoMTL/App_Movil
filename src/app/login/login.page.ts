@@ -15,12 +15,11 @@ export class LoginPage implements OnInit {
   }
 
   async onLoginGoogle() {
-    this.router.navigate(['tabs']);
+    // this.router.navigate(['tabs']);
     try {
       const user = await this.authSvc.loginGoogle();
-      this.router.navigate(['tabs']);
       if (user) {
-        
+        this.router.navigate(['tabs']);
         //const isVerified = this.authSvc.isEmailVerified(user);
         //console.log('verified->',isVerified);
         //this.redirectUser(isVerified);

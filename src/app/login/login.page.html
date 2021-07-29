@@ -8,16 +8,13 @@
   
   <div class="header">
     <img class="img" src="assets/icon/index.png"/>
-    <ion-title class="title">INICIO<br>SESION</ion-title>
+    <ion-title class="title">INICIO SESION</ion-title>
+    <ion-button type="submit" (click)="onLoginGoogle(email,password)">Ingresar con Google</ion-button>
   </div>
   
-  <ion-content style="text-align: center;" >
+  <!-- <ion-content>
     <ion-input class="input" type="email" placeholder="Correo"></ion-input>
     <ion-input class="input" type="password" placeholder="Contraseña"></ion-input>
     <ion-button class="button" href="/tabs">INGRESAR</ion-button> 
-    
-
-    <ion-button type="submit" color="danger" (click)="onLoginGoogle(email,password)" expand="block">Login with Google</ion-button>
-
-  </ion-content>
+  </ion-content> -->
 </body>
