@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../service/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,34 +9,32 @@ import { AuthService } from '../service/auth.service';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private authSvc: AuthService) { }
+  constructor(private authSvc: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
-  onLogin(email,password){
-    try{
-      const user = this.authSvc.login(email.value,password.value);
-      if(user){
 
-      }
-    }catch(error){
-      console.log('Error->',error)
-    }
-  }
-
-  async onLoginGoogle(){
-    try{
+  async onLoginGoogle() {
+    this.router.navigate(['tabs']);
+    try {
       const user = await this.authSvc.loginGoogle();
-      if(user){
-        //todo: check email
-        (console.log('User->',user))
+      this.router.navigate(['tabs']);
+      if (user) {
+        
+        //const isVerified = this.authSvc.isEmailVerified(user);
+        //console.log('verified->',isVerified);
+        //this.redirectUser(isVerified);
       }
-
-    }catch(error){
-      console.log('Error->',error)
+    } catch (error) {
+      console.log('Error->', error);
     }
   }
 
-
-
+  private redirectUser(isVerified: boolean): void {
+    if (isVerified) {
+      this.router.navigate(['tabs']);
+    } else {
+      this.router.navigate(['login']);
+    }
+  }
 }
